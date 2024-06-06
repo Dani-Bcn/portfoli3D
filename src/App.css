@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Louis"; 
+  src: url("/public/fonts/Mayfest_Regular\ -\ Demo.ttf");
+}
+
+html{
+  overflow: hidden;
+}
+
+.mainTitle {
+      font-family: "Louis";
+      font-weight: 100;
+      font-variation-settings: "hght" 0;
+      transform: rotateY(90deg);
+}
+
+.mainTitle:hover {
+    font-family: "Louis";
+    font-weight: 800;
+    font-variation-settings: "hght" 800;
+    transform: rotateY(90deg);
+    transition: all;
+    transition-duration: 2;
+}
