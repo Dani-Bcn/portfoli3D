@@ -6,8 +6,7 @@ import gsap from "gsap";
 export function Cuadro(props) {
   const { nodes, materials } = useGLTF("/cuadro.gltf");
   const [activeCuadro, setActiveCuadro] = useState(false);
-  const cuadroRef = useRef();
- 
+  const cuadroRef = useRef(); 
 
 useEffect(()=>{
   activeCuadro?
@@ -50,7 +49,7 @@ useEffect(()=>{
           depthScale={1.2}
           minDepthThreshold={0.4}
           maxDepthThreshold={1.4}
-          color="rgb(240, 204, 172)"
+          color="rgb(126, 69, 36)"
           metalness={0.005}
         />
       </mesh>

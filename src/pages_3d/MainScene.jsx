@@ -13,9 +13,10 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import React, { useRef, useState, Suspense, useEffect } from "react";
 import text1 from "/public/fonts/Rammetto One_Regular.json";
 import { Cuadro } from "../models_3d/Cuadro";
-import text2 from "/public/fonts/Gruppo-Regular.ttf";
+import text2 from "/public/fonts/Sacramento-Regular.ttf";
 import { Cartel } from "../models_3d/Nabvar";
 import gsap from "gsap";
+import { Pizarra } from '../models_3d/Pizarra'
 import { motion as m } from "framer-motion-3d"
 
 const MainScene = () => {
@@ -79,18 +80,18 @@ useEffect(()=>{
             {`Dani Pérez`}
             <meshStandardMaterial color={"rgb(170,152,250)"} />
           </Text3D>
-          <Text scale={0.3} position={[1.5, -3, 2]} font={text2}>
-            Buscando crear webs diferentes, {"\n"}
-            opino que las webs en 3d son el futuro,{"\n"}
+          <Text  scale={0.4} position={[1.5, -3, 2]} font={text2}>
+            Buscando crear webs diferentes, opino que las webs en{"\n"} 3d son el futuro,
             con las nuevas tecnologias y buenas prácticas,{"\n"}
-            el peso y la fluidez de estás ya no deberian{"\n"}
-            de ser un problema como para renunciar a ellas.{"\n"}Y una
+            el peso y la fluidez de estás ya no deberian
+            de ser un problema{"\n"} como para renunciar a ellas.{"\n"}Y una
             reflexión...{"\n"}
             ..se dejaron de hacer juegos en 3D porque pesaban más?...
-            <meshStandardMaterial color={"rgb(20,52,250)"} />
+            <meshStandardMaterial color={"rgb(220,250,250)"} />
           </Text>
           <Cuadro />
           <Cartel />
+          <Pizarra/>
         </Scroll>
       </ScrollControls>
     </Canvas>

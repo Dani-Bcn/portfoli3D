@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useGLTF, Text3D, useCursor ,useScroll} from "@react-three/drei";
+import { useGLTF, Text3D, useCursor, useScroll } from "@react-three/drei";
 import text1 from "/public/fonts/Rammetto One_Regular.json";
 import gsap from "gsap";
 import { useFrame } from "@react-three/fiber";
@@ -11,7 +11,8 @@ export function Cartel(props) {
   const [activeSkills, setActiveSkills] = useState(false);
   const [colorskills, setColorskills] = useState("rgb(170,152,250)");
   const [colorCartel, setColorCartel] = useState("rgb(170,152,250)");
-  const [colorCartelProjects, setColorCartelProjects] = useState("rgb(170,152,250)");
+  const [colorCartelProjects, setColorCartelProjects] =
+    useState("rgb(170,152,250)");
   useCursor(activeCursor);
   useCursor(activeCursorProjects);
   useCursor(activeSkills);
@@ -20,7 +21,7 @@ export function Cartel(props) {
   const aboutRef = useRef();
   const projectsRef = useRef();
   const skillsRef = useRef();
-
+  const data = useScroll();
   useEffect(() => {
     activeCursor
       ? gsap.to(aboutRef.current.position, {
@@ -55,15 +56,14 @@ export function Cartel(props) {
         });
   }, [activeSkills]);
 
-  const data = useScroll()
   useFrame((state, delta) => {
     if (data.range(5, 5 / 5) < 1) {
-      cartelRef.current.position.y = 0 - data.range(0, 20 / 2) * 70
+      cartelRef.current.position.y = 0 - data.range(0, 20 / 2) * 70;
     }
-  })  
+  });
 
   return (
-    <group ref={cartelRef} position={[-3,0,-0.1]}>
+    <group ref={cartelRef} position={[-3, 0, -0.1]}>
       <group
         ref={projectsRef}
         position={[3, 2.5, 5]}
@@ -85,7 +85,9 @@ export function Cartel(props) {
           geometry={nodes.Extrude_1.geometry}
           material={materials.Mat}
           position={[0, 0, -7.368]}
-        />
+        >
+          <meshStandardMaterial color={"rgb(146, 100, 86)"} />
+        </mesh>
         <Text3D
           castShadow
           class="coco"
@@ -122,7 +124,9 @@ export function Cartel(props) {
           geometry={nodes.Extrude_1.geometry}
           material={materials.Mat}
           position={[0, 0, -7.368]}
-        />
+        >
+          <meshStandardMaterial color={"rgb(146, 100, 86)"} />
+        </mesh>
         <Text3D
           castShadow
           curveSegments={50} //Definicion
@@ -148,19 +152,19 @@ export function Cartel(props) {
       >
         <mesh
           onPointerOver={() => {
-            setActiveSkills(true),
-              setColorskills("rgb(255,200,150)");
+            setActiveSkills(true), setColorskills("rgb(255,200,150)");
           }}
           onPointerOut={() => {
-            setActiveSkills(false),
-              setColorskills("rgb(170,152,250)");
+            setActiveSkills(false), setColorskills("rgb(170,152,250)");
           }}
           castShadow
           receiveShadow
           geometry={nodes.Extrude_1.geometry}
           material={materials.Mat}
           position={[0, 0, -7.368]}
-        />
+        >
+          <meshStandardMaterial color={"rgb(146, 100, 86)"} />
+        </mesh>
         <Text3D
           castShadow
           class="coco"

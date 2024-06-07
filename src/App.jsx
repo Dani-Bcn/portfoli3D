@@ -10,6 +10,7 @@ export default function App() {
 
       <Back/>
      {/*  <Home/>   */}
+    
       <MainScene/>
     </main>
   )
